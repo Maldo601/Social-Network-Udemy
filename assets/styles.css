@@ -1,0 +1,113 @@
+/* GENERAL */
+
+/* ********* NAVBAR *********  */
+/* ACCESS REGISTER NAVBAR RIGHT */ 
+#lis {
+    font-family: Orbitron;
+    color:rgb(2, 39, 39);
+    padding: 17px;
+    
+}
+.active #lis {
+    padding: 12px;
+    background-color: silver;
+    border-radius: 15px;   
+}
+#list {
+    font-family: Orbitron;
+    color:rgb(2, 39, 39);
+    padding: 28px;    
+}
+/* DROPDOWN STYLE MENU RIGHT */
+.dropdown-menu {
+    background-color: transparent!important;
+}
+.dropdown-menu li  {
+    color: black;  
+}
+.dropdown-menu a{
+    color: black;
+}
+.dropdown-menu li:hover{
+    background: #eee !important;
+}
+a.fas.fa-stop {
+    cursor:pointer;
+}
+
+
+/* ********* FORMULARIS ********* */
+/* _Tituls i subtextos_ */
+.h1-strong{
+    font-size: 35px;
+    font-weight: bold;
+    
+    border-bottom:1px groove rgb(0, 0, 0);
+    display: inline-block;
+    padding-bottom:10px;
+    padding-right: 105px;
+    margin-top: 25px; 
+    width: 100%;
+}
+.aster{
+    font-size: 12px;
+    font-style: italic;
+}
+::-webkit-input-placeholder {
+    font-size: 12px;
+    font-style: italic;
+}
+/* Formularis de registre i login */
+#forma1, #forma2, #forma3, #forma4, #forma5 {
+    border-radius: 25px; 
+    background-color: rgb(235, 242, 245);
+    width: 100%;
+}
+#passwordHelpBlock{
+    font-size: 9px;
+    margin-left: 5px;
+}
+/* Politica, input, texts*/
+.minlet{
+    margin-top: 1px;
+    font-size: 9px;
+}
+
+.olvcont {
+    margin-top: -8px;
+    margin-right: 10px;
+    font-size: 11px;
+    text-align: right;
+    color: blue; 
+}
+
+/********* JUMBOTRON HOME ***********/
+.jumbotron {
+    padding:20px!important;
+    border-radius: 50px!important;
+    text-align: center;
+    background-color: white!important;
+    margin-top: 10px;
+}
+ul.nav.navbar.navbar-right{
+    margin-right: 100px;
+    
+}
+a.dropdown-toggle{
+    width: 100%;
+}
+
+ul.navbar-nav{
+    flex-direction: unset;
+}
+/* ******* CARRUSEL ADAPTABLE ******* */
+.carousel,.item,.active{height:100%;}
+    .carousel-inner{height:100%;}
+    
+    .carousel-inner>.item>img {
+        height:100%;
+    }
+    .carousel .carousel-item img{ height:100%; }
+    .carousel .carousel-item .view{ height:100%; }
+
+

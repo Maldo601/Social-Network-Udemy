@@ -1,0 +1,67 @@
+
+<div class="col-lg-6 offset-lg-3">
+<h1 class="h1">{{title}}</h1>
+<div class="alert alert-success" *ngIf="status == 'success'">
+  Se han actualizado tus datos de usuario correctamente.
+</div>
+<div class="alert alert-danger" *ngIf="status == 'error'">
+  No se han podido actualizar tus datos de usuario.
+</div>
+<form #userEditForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label>Nombre</label>
+        <input type="text" 
+               name="nom" 
+               #nom="ngModel" 
+               [(ngModel)]="user.nom" required
+               class="form-control"
+               placeholder="Nombre" required>
+        <div class="" *ngIf="!nom.value && nom.touched">
+          Porfavor, introduce tu nombre.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Apellidos</label>
+        <input type="text" 
+               class="form-control" 
+               placeholder="Apellidos" required
+               name="apellido"
+               #apellido="ngModel"
+               [(ngModel)]="user.apellido">
+        <div class="" *ngIf="!apellido.value && apellido.touched">
+          Porfavor, introduce tus apellidos.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label>Nick/Apodo</label>
+          <input type="text" 
+                 class="form-control" 
+                 placeholder="Nickname" required
+                 name="nick"
+                 #nick="ngModel"
+                 [(ngModel)]="user.nick">
+          <div class="" *ngIf="!nick.value && nick.touched">
+            Porfavor, introduce un nuevo apodo.
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label>Email</label>
+            <input type="text" 
+                   class="form-control" 
+                   placeholder="email" required
+                   name="email"
+                   #email="ngModel"
+                   [(ngModel)]="user.email">
+            <div class="" *ngIf="!email.value && email.touched">
+              Porfavor, introduce un nuevo email.
+            </div>
+          </div>
+      
+    </div>   
+    
+    <input type="submit" value="{{title}}"
+           class="btn btn-warning" [disabled]="!userEditForm.form.valid">
+  </form>
+</div>

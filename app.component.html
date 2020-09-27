@@ -1,0 +1,65 @@
+
+<nav class="navbar navbar-expand-lg justify-content-end" >
+  <img src="assets/logoweb.png" alt="logo" style="width: 3rem;">
+  <a class="navbar-brand mr-auto">{{title}}
+    
+  </a>     
+    <!-- ngIf identity fa apareixer o desapareixer tots aquests icons en base a si 
+    hi ha un objecte ID guardat en cache o no. -->
+  <div class="navbar navbar-expand navbar-expand-sm justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav" *ngIf="identity" id="ejm5">
+      <li>
+        <a [routerLink]="['/home']" [routerLinkActive]="['active']" class="lis">
+          <span id="lis">Inicio</span>
+          
+        </a>
+        <a href="#">
+          <span id="lis">Timeline</span>
+          
+        </a>
+        <a href="#">
+          <span id="lis">Amigos</span>
+          
+        </a>
+      </li>
+      <li class="avatar">
+        <!-- Load de img user -->
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          {{identity.nick}}
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li>
+            <a class="fas fa-user" href="#">
+            Mi perfil
+            </a>
+          </li>
+          <li>
+            <a class="fas fa-file" [routerLink]="['/mis-datos']">
+            Mis datos
+            </a>
+          </li>
+          <li>
+            <a class="fas fa-stop" (click)="logout()">
+            Cerrar Sesion
+            </a>
+          </li>
+        </ul>
+      </li>        
+    </ul>
+    <ul class="navbar-nav navbar-right" *ngIf="!identity" >
+      <li>
+      <a [routerLink]="['/login']" [routerLinkActive]="['active']" >
+        <span id="list">Acceder</span>        
+      </a>
+      <a [routerLink]="['/registro']" [routerLinkActive]="['active']">
+        <span id="list">Registro</span>        
+      </a>
+    </li>
+    </ul>     
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,253 @@
+<div class="container-fluid ">
+    <div class="row">  
+      <div class="col-xl-10 col-lg-12 col-md-12 pl-0 pr-0"> 
+            
+            <!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-2" data-slide-to="1"></li>
+      <li data-target="#carousel-example-2" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <div class="view">
+          <img class="d-block w-100" src="assets/digital.png">
+          <div class="mask rgba-black-light"></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Compartimentado Musical</h3>
+          <p>Socializa en tu red social con gente que tiene tus mismos gustos y estilos musicales</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!--Mask color-->
+        <div class="view">
+          <img class="d-block w-100" src="assets/Corporation.png"
+            alt="Second slide">
+          <div class="mask rgba-black-strong"></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Compartimentado Musical</h3>
+          <p>Socializa en tu red social con gente que tiene tus mismos gustos y estilos musicales</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!--Mask color-->
+        <div class="view">
+          <img class="d-block w-100" src="assets/minimalist.png"
+            alt="Third slide">
+          <div class="mask rgba-black-slight"></div>
+        </div>
+        <div class="carousel-caption">
+          <h3 class="h3-responsive">Compartimentado Musical</h3>
+          <p>Socializa en tu red social con gente que tiene tus mismos gustos y estilos musicales</p>
+        </div>
+      </div>
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+    
+  </div>
+  
+        </div>
+        <div class="col-lg-2 col-md-5 mx-md-auto">
+
+            <h1 class="h1-strong">{{title}}</h1>
+            <p class="aster">Los campos con asterisco (*) son obligatorios. </p>
+
+            <div class="alert alert-success" *ngIf="status == 'success'">
+              Registro completado correctamente.
+              <a [routerLink]="['/login']">Identificate aquí</a>
+            </div>
+            <div class="alert alert-danger" *ngIf="status == 'error'">
+              Error al registrarse, tu nick o email ya estan en uso.
+            </div>
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="">
+        <p>
+        <label>Nombre*</label>
+        <input id="forma1" type="text" name="nom" #name="ngModel" [(ngModel)]="user.nom" class="form-control" required placeholder="Introduce tu nombre"> 
+        <span *ngIf="!name.valid && name.touched">               
+        </span>
+        </p>
+        <p>
+        <label>Apellidos*</label>
+        <input id="forma2" type="text" name="apellido" #apellido="ngModel" [(ngModel)]="user.apellido" class="form-control" required placeholder="Introduce tus apellidos"> 
+        <span *ngIf="!apellido.valid && apellido.touched">               
+        </span>
+        </p>
+        <p>
+        <label>Nickname*</label>
+        <input id="forma3" type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required placeholder="Apodo en la red"> 
+        <span *ngIf="!nick.valid && nick.touched">                
+        </span>
+        </p>
+        <p>
+        <label>Email*</label>
+        <input id="forma4" type="text" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required 
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="ejemplo@example.com"> 
+        <small id="passwordHelpBlock" class="form-text text-muted">
+               El email debe escribirse con minúsculas como en el ejemplo
+        </small> 
+        <span *ngIf="!email.valid && email.touched">              
+        </span>
+        </p>
+        <p>
+        <label for="forma5">Contraseña*</label>
+        <input id="forma5" type="password" name="password" #password="ngModel" [(ngModel)]="user.password" 
+               class="form-control" required placeholder="********" ng-reflect-model="#password"
+               aria-describedby="passwordHelpBlock"> 
+        <small id="passwordHelpBlock" class="form-text text-muted">
+          La contraseña debe tener de 8 a 20 caracteres alfanumericos, pero no espacios.
+        </small>      
+        <span *ngIf="!password.valid && password.touched">              
+        </span>
+        </p>
+        
+    <input type="submit" value={{title}} class="btn btn-success" [disabled]="!registerForm.form.valid" 
+           id="inputregister">
+           <p class="minlet">
+            Al hacer clic en "Registrarte", aceptas nuestros Terminos y Condiciones del servicio. 
+            Obtén más información sobre cómo recopilamos, usamos y compartimos tus datos en la Política de Datos, 
+            así como el uso que hacemos de las cookies y tecnologías similares en la Política de Cookies. 
+           </p> 
+    </form>
+        </div>
+           
+        </div>
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Acerca del Proyecto...</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">¿Quienes somos?</a>
+          </li>
+          <li>
+            <a href="#!">Política de Privacidad</a>
+          </li>
+          <li>
+            <a href="#!">Privacidad y Seguridad</a>
+          </li>
+          <li>
+            <a href="#!">Normativa</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">RSS</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Facebook</a>
+          </li>
+          <li>
+            <a href="#!">Instagram</a>
+          </li>
+          <li>
+            <a href="#!">Twitter</a>
+          </li>
+          <li>
+            <a href="#!">Linkedin</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">GitHub</a>
+          </li>
+          <li>
+            <a href="#!">StackOverFlow</a>
+          </li>
+          <li>
+            <a href="#!">Dominio</a>
+          </li>
+          <li>
+            <a href="#!">Hosting</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Idiomas</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">ENG</a>
+          </li>
+          <li>
+            <a href="#!">ESP</a>
+          </li>
+          <li>
+            <a href="#!">FR</a>
+          </li>
+          <li>
+            <a href="#!">GER</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> Synaptics Corporation</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
